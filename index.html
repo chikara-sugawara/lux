@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ボイス資料 ／ ルクス</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0d0a1a;--bg2:#16112a;--bg3:#1e1838;
+  --mine:#f0e080;--border:rgba(139,92,246,0.22);
+  --text:#ede8f5;--text2:#9088aa;--gold:#e8b84b;
+}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+  font-size:15px;line-height:1.7;padding-bottom:50px;
+}
+/* ===== ヘッダー ===== */
+.page-header{
+  background:linear-gradient(135deg,#2a1e00,#2a1e00cc);
+  border-bottom:2px solid #f0e080;
+  padding:20px 18px 16px;position:sticky;top:0;z-index:50;
+}
+.header-inner{display:flex;align-items:center;gap:14px;}
+.header-icon{font-size:40px;}
+.header-text h1{font-size:20px;color:#f0e080;letter-spacing:1px;margin-bottom:2px;}
+.header-text p{font-size:12px;color:rgba(255,255,255,0.6);}
+.header-files{font-size:11px;color:rgba(255,255,255,0.5);font-family:monospace;margin-top:3px;}
+
+/* ===== プロフィールカード ===== */
+.profile-card{
+  margin:14px 14px 0;
+  background:#16112a;border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+}
+.profile-head{
+  padding:10px 14px;
+  background:linear-gradient(135deg,#2a1e00aa,#2a1e0055);
+  border-bottom:1px solid var(--border);
+  font-size:11px;color:#f0e080;letter-spacing:1px;
+}
+.profile-body{padding:12px 14px;font-size:13px;color:#c0b8d8;line-height:1.8;}
+.vtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.vtag{
+  font-size:12px;padding:4px 11px;border-radius:20px;
+  background:rgba(139,92,246,0.15);color:#9080cc;
+  border:1px solid rgba(139,92,246,0.3);
+}
+.special-badge{
+  margin:10px 14px 0;padding:10px 14px;
+  background:rgba(192,57,43,0.15);color:#f08080;
+  border:1px solid rgba(192,57,43,0.3);
+  border-radius:10px;font-size:12px;line-height:1.8;
+}
+
+/* ===== 凡例 ===== */
+.legend{
+  margin:12px 14px 0;
+  display:flex;gap:10px;flex-wrap:wrap;
+  font-size:12px;color:var(--text2);
+  padding:9px 12px;background:#16112a;
+  border:1px solid var(--border);border-radius:8px;
+}
+.leg-mine{color:#f0e080;font-weight:bold;}
+.leg-other{color:var(--text2);}
+
+/* ===== シーンブロック ===== */
+.scene-block{margin:14px 14px 0;}
+.scene-title{
+  font-size:13px;color:var(--gold);
+  padding:8px 12px;
+  background:#16112a;border:1px solid var(--border);
+  border-radius:10px 10px 0 0;
+  letter-spacing:1px;
+}
+.scene-lines{
+  background:#100c20;
+  border:1px solid var(--border);border-top:none;
+  border-radius:0 0 10px 10px;
+  padding:10px;display:flex;flex-direction:column;gap:6px;
+}
+
+/* ===== セリフ行（担当） ===== */
+.line.mine{
+  background:rgba(240,224,128,0.1);
+  border:1.5px solid #f0e080;
+  border-radius:8px;padding:9px 11px;
+}
+.mine-label{color:#f0e080;font-weight:bold;font-size:12px;}
+.mine-text{
+  font-size:15px;color:#ffffff;
+  font-weight:500;line-height:1.75;margin-top:4px;
+}
+.line-note{
+  font-size:12px;color:#f0e080;opacity:0.8;
+  margin-top:5px;padding-top:5px;
+  border-top:1px solid rgba(240,224,128,0.3);
+  font-style:italic;
+}
+
+/* ===== セリフ行（他キャラ） ===== */
+.line.other{
+  padding:6px 10px;
+  border-radius:6px;
+  background:transparent;
+}
+.other-label{font-size:11px;color:var(--text2);display:block;margin-bottom:2px;}
+.other-text{font-size:13px;color:#7070a0;line-height:1.7;}
+
+/* ===== ファイルタグ ===== */
+.line-meta{display:flex;align-items:center;gap:8px;margin-bottom:2px;}
+.file-tag{
+  font-size:10px;padding:2px 8px;
+  background:rgba(0,0,0,0.4);color:rgba(255,255,255,0.5);
+  border-radius:4px;font-family:monospace;
+}
+.char-label{font-size:12px;}
+
+/* ===== 注意書き ===== */
+.note-box{
+  margin:14px;padding:12px 14px;
+  background:rgba(139,92,246,0.08);
+  border:1px solid rgba(139,92,246,0.25);
+  border-radius:10px;font-size:12px;color:var(--text2);line-height:1.8;
+}
+.note-box strong{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="header-inner">
+    <div class="header-icon">☀️</div>
+    <div class="header-text">
+      <h1>ルクス</h1>
+      <p>人類神・黒幕</p>
+      <p class="header-files">lux_01〜lux_05 / zephir_01〜zephir_05</p>
+    </div>
+  </div>
+</div>
+
+<div class="profile-card">
+  <div class="profile-head">▶ キャラクター・性格</div>
+  <div class="profile-body">
+    常に微笑んでいる不気味な神。穏やかで親切そうに見えるがその言葉の奥に恐ろしい本質がある。老賢者ゼフィルに変装した際は老人口調を使うが笑い方のリズムはルクスと同一。この「笑い方の癖」が同一人物であることに気づかせる重要な演技ポイント。
+    <div class="vtags"><span class="vtag">性別不問</span><span class="vtag">穏やかで不気味</span><span class="vtag">常に笑っている</span><span class="vtag">ゼフィル時は老人口調</span></div>
+  </div>
+</div>
+
+<div class="special-badge">⚠️ 二役：ルクス（本来の姿）＋老賢者ゼフィル（変装）<br>笑い方のリズムを両者で統一してください</div>
+
+<div class="note-box">
+  <strong>【収録について】</strong><br>
+  ・（）内の地の文は収録不要です<br>
+  ・……は間を取ってください。——は余韻です<br>
+  ・<span style="color:#f0e080;font-weight:bold;">■ 色付きのセリフ</span>があなたの担当セリフです
+</div>
+
+<div class="legend">
+  <span class="leg-mine">■ あなたのセリフ（収録対象）</span>
+  <span class="leg-other">■ 相手のセリフ（参考・前後の流れ）</span>
+</div>
+
+<div class="scene-block">
+  <div class="scene-title">🧙 旅の賢者</div>
+  <div class="scene-lines"><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">zephir_01</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">おや。若い旅人たちよ、疲れた顔をしておるな。</div>
+  <div class='line-note'>🎭 老人口調。笑い方はルクスと同じに。</div>
+</div><div class="line other">
+  <span class="char-label other-label">🏹 エリナ</span>
+  <div class="line-text other-text">ええ、まあ……あなたは？</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">zephir_02</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">わしはゼフィルと申す。長く旅をしておるただの老いぼれよ。……して、魔王城へ向かうのかね？</div>
+  <div class='line-note'>🎭 老人口調だが最後の問いに違和感を。</div>
+</div><div class="line other">
+  <span class="char-label other-label">🔮 ライオス</span>
+  <div class="line-text other-text">……なぜそれを。</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">zephir_03</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">ふふ。旅人の目をしておる。それだけよ。——魔王を倒した後のことは、考えておるかね？</div>
+  <div class='line-note'>🎭 「ふふ」の笑い方はルクスと同じに。</div>
+</div><div class="line other">
+  <span class="char-label other-label">⚔️ アレン</span>
+  <div class="line-text other-text">倒した後……？平和になる、それだけじゃないんですか？</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">zephir_04</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">そうだといいのう。……人も、魔族も、すべては神の御心のままよ。</div>
+  <div class='line-note'>🎭 何気なく言うが重い。</div>
+</div><div class="line other">
+  <span class="char-label other-label">✨ セラフィア</span>
+  <div class="line-text other-text">（小声で）なんか……この方、少し怖いですね。</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">zephir_05</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">ははは。老人の繰り言よ。精々励むがいい——勇者よ。</div>
+  <div class='line-note'>🎭 「勇者よ」に含みを。</div>
+</div></div>
+</div><div class="scene-block">
+  <div class="scene-title">☀️ 光の影</div>
+  <div class="scene-lines"><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">lux_01</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">やあ、ノワール。久しぶりだね。</div>
+  <div class='line-note'>🎭 いつも通り穏やかで、それが怖い。</div>
+</div><div class="line other">
+  <span class="char-label other-label">🌙 ノワール</span>
+  <div class="line-text other-text">笑うな。……あんたが裏で何をしているか、だいたいわかってる。</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">lux_02</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">ふふ。相変わらず勘がいい。</div>
+  <div class='line-note'>🎭 感心している風で全く悪びれない。</div>
+</div><div class="line other">
+  <span class="char-label other-label">🌙 ノワール</span>
+  <div class="line-text other-text">この前、旅の道中で若者たちに会ったでしょ。……あの笑い方、どこで見ても同じだから、すぐわかる。</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">lux_03</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">……気づいてたんだ。さすがだね。</div>
+  <div class='line-note'>🎭 少しだけ驚いて、すぐ穏やかに。</div>
+</div><div class="line other">
+  <span class="char-label other-label">🌙 ノワール</span>
+  <div class="line-text other-text">何が目的なの。人間も魔族もあんたの掌の上で——</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">lux_04</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">世界に、少し刺激が必要だっただけだよ。平和は——退屈だからね。</div>
+  <div class='line-note'>🎭 笑顔で言う恐怖。</div>
+</div><div class="line other">
+  <span class="char-label other-label">🌙 ノワール</span>
+  <div class="line-text other-text">……最低。</div>
+</div><div class="line mine">
+  <div class="line-meta">
+    <span class="file-tag">lux_05</span>
+    <span class="char-label mine-label">☀️ ルクス</span>
+  </div>
+  <div class="line-text mine-text">そう言わないで。君も神なら、わかるはずだよ——この世界の美しさが、争いの中にこそあることを。</div>
+  <div class='line-note'>🎭 優しく諭すような口調が一番怖い。</div>
+</div></div>
+</div>
+
+</body>
+</html>
